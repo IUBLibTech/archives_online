@@ -1,174 +1,56 @@
-x-app: &app
-  build:
-    context: .
-    target: base
-    args:
-      BUILDKIT_INLINE_CACHE: 1
-    cache_from:
-      - ghcr.io/notch8/archives_online/base:latest
-      - ghcr.io/notch8/archives_online:latest
-  image: ghcr.io/notch8/archives_online:${TAG:-latest}
-  env_file:
-    - .env
-  volumes:
-    - .:/home/app/webapp
-    - node_modules:/home/app/webapp/node_modules
-    - tmp:/home/app/webapp/tmp
-    - public:/home/app/webapp/public
-  networks:
-    internal:
-
-volumes:
-  db:
-  node_modules:
-  public:
-  solr:
-  tmp:
-  zk:
-  zoo:
-
-networks:
-  internal:
-
+# Requires Docker Compose v2
+name: archives_online
 services:
-  base:
-    <<: *app
-    image: ghcr.io/notch8/archives_online/base:${TAG:-latest}
+  app:
     build:
       context: .
-      target: base
-      cache_from:
-        - ghcr.io/notch8/archives_online/base:latest
-      args:
-        BUILDKIT_INLINE_CACHE: 1
-
-  web:
-    <<: *app
-    build:
-      context: .
-      target: web
+    image: ghcr.io/iublibtech/archives_online/archives_online:latest
+    env_file:
+      - .docker.env
+    volumes:
+      - .:/app/webapp
+      - node_modules:/app/webapp/node_modules
+      - ./tmp:/app/webapp/tmp
+      - ./public:/app/webapp/public
+      - ./generate-init.sh:/app/webapp/generate-init.sh
+    depends_on:
+      - db
+      - solr
+    ports:
+      - 3000:3000
     expose:
       - 3000
-    environment:
-      - VIRTUAL_HOST=archives-online.test
-      - VIRTUAL_PORT=80
-    volumes:
-      - ./generate-init.sh:/home/app/webapp/generate-init.sh
-    depends_on:
-      db:
-        condition: service_healthy
-      solr:
-        condition: service_started
+    command: bundle exec puma -b tcp://0.0.0.0:3000
 
   db:
     platform: linux/amd64
     image: mysql:8.4.2
     env_file:
-      - .env
+      - .docker.env
     expose:
       - 3306
     volumes:
       - db:/var/lib/mysql
       # - ./generate-init.sh:/docker-entrypoint-initdb.d/generate-init.sh
-    networks:
-      - internal
-    healthcheck:
-      test: ["CMD", "sh", "-c", "mysqladmin ping -h${DATABASE_HOST:-db}"]
-      interval: 5s
-      timeout: 5s
-      retries: 10
-
-  mailhog:
-    image: mailhog/mailhog
-    environment:
-      - VIRTUAL_PORT=8025
-      - VIRTUAL_HOST=mailhog.archives-online.test
-    ports:
-      - "8025:8025"
-    networks:
-      - internal
-
-  zoo:
-    image: zookeeper:3.6.2
-    environment:
-      - ZOO_MY_ID=1
-      - ZOO_SERVERS=server.1=zoo:2888:3888;2181
-      - ZOO_4LW_COMMANDS_WHITELIST=mntr,srvr,ruok,conf
-    volumes:
-      - zoo:/data
-      - zk:/datalog
-    healthcheck:
-      test:
-        [
-          "CMD-SHELL",
-          "echo 'ruok' | nc -w 2 -q 2 localhost 2181 | grep imok || exit 1",
-        ]
-      interval: "10s"
-      timeout: "8s"
-    networks:
-      - internal
 
   solr:
-    image: ghcr.io/notch8/archives_online/solr:${TAG:-latest}
-    build:
-      context: .
-      target: solr
-      args:
-        BUILDKIT_INLINE_CACHE: 1
-      cache_from:
-        - ghcr.io/notch8/archives_online/solr:latest
-    environment:
-      - OOM=script
-      - SOLR_ADMIN_USER=solr
-      - SOLR_ADMIN_PASSWORD=SolrRocks
-      - SOLR_COLLECTION=${SOLR_CORE}
-      - SOLR_CLOUD_BOOTSTRAP=yes
-      - SOLR_ENABLE_CLOUD_MODE=yes
-      - SOLR_ENABLE_AUTHENTICATION=yes
-      - ZK_HOST=zoo:2181
-      - VIRTUAL_PORT=8983
-      - VIRTUAL_HOST=solr.archives-online.test
-    user: root
-    command: bash -c "
-      chown -R 8983:8983 /var/solr
-      && ./bin/solr zk cp file:/var/solr/data/security.json zk:/security.json
-      && runuser -u solr -- solr-foreground"
-    expose:
-      - 8983
+    image: solr:8.11
+    env_file:
+      - .docker.env
+    command: solr-precreate archives_online /opt/solr/server/configsets/arclight
     volumes:
-      - solr:/var/solr
-      - './solr/conf:/opt/solr/server/solr/configsets/archives-online'
-      - './solr/security.json:/var/solr/data/security.json'
-    healthcheck:
-      test: curl -sf http://$$SOLR_ADMIN_USER:$$SOLR_ADMIN_PASSWORD@solr:8983/solr/admin/cores?action=STATUS || exit 1
-      start_period: 3s
-      interval: 5s
-      timeout: 5s
-      retries: 6
-    depends_on:
-      zoo:
-        condition: service_healthy
-    networks:
-      - internal
+      - solr_home:/var/solr/data
+      - ./solr/conf:/opt/solr/server/configsets/arclight:ro
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 524288
 
-  initialize_solr:
-    <<: *app
-    environment:
-      - CONFDIR=/home/app/webapp/solr/conf
-      - SOLR_ADMIN_USER=solr
-      - SOLR_ADMIN_PASSWORD=SolrRocks
-      - SOLR_HOST=solr
-      - SOLR_PORT=8983
-      - SOLR_CONFIGSET_NAME=archives-online
-      - SOLR_COLLECTION_NAME=archives-online
-      - SOLR_REPLICATION_FACTOR=1
-    entrypoint: ["sh", "-c"]
-    command:
-      - >
-        ./bin/solrcloud-upload-configset.sh /home/app/webapp/solr/conf &&
-        ./bin/solrcloud-assign-configset.sh
-    depends_on:
-      db:
-        condition: service_started
-      solr:
-        condition: service_healthy
+volumes:
+  db:
+  node_modules:
+  public:
+  solr_home:
+  tmp:
+  zk:
+  zoo:
