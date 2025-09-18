@@ -5,6 +5,7 @@ capybara-*.html
 /db/*.sqlite3-journal
 /db/*.sqlite3-[0-9]*
 /public/system
+/public/uv
 /coverage/
 /spec/tmp
 *.orig
@@ -26,7 +27,7 @@ config/master.key
 
 # dotenv, dotenv-rails
 # TODO Comment out these rules if environment variables can be committed
-.env
+# .env
 .env*.local
 
 ## Environment normalization:
@@ -67,3 +68,8 @@ yarn-debug.log*
 /storage/*
 !/storage/.keep
 /public/uploads
+
+/public/html
+/public/ead
+.sass-cache
+.env.*

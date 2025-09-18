@@ -3,3 +3,118 @@ $logo-image: image_url('arclight/logo.png') !default;
 @import 'bootstrap';
 @import 'blacklight/blacklight';
 @import 'arclight/application';
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+#main-container {
+  flex: 1 0 auto;
+}
+
+// OVERRIDE Blacklight v8.3.0 to expand search bar to full width
+.navbar-search {
+  .search-query-form {
+    width: 100%;
+  }
+
+  &.navbar > div {
+    justify-content: end;
+    height: 5rem;
+  }
+}
+
+// OVERRIDE Blacklight v8.9.0 to allow sidebar to scroll independently of the finding aid content
+#sidebar {
+  @media (min-width: 992px) {
+    position: sticky;
+    top: 0;
+    height: calc(100vh - 5rem);
+    overflow-y: auto;
+  }
+
+  .al-request-button {
+    height: 35px;
+  }
+}
+
+// OVERRIDE Arclight v1.4.0 to remove padding on the left of the header
+.al-masthead .h1 {
+  padding-left: 0;
+}
+
+// OVERRIDE Blacklight Range Limit gem because it doesn't seem to work with Rails 7/Blacklight 8
+// @see https://github.com/projectblacklight/blacklight_range_limit/issues/236
+#facet-date_range_isim {
+  // Hide some features that don't work or we don't want
+  .distribution, .more_facets, .facet-values.missing, .facet-count {
+    display: none;
+  }
+  p.range.subsection {
+    .facet-limit-active & {
+      // Don't show the complete date range if one is already applied
+      display: none;
+    }
+  }
+}
+
+// OVERRIDE Blacklight v8.3.0 to fix boostrap collapsing animation
+.facet-field-heading button.collapsed::after {
+  transition: transform 0.25s ease;
+}
+
+.facet-field-heading button::after {
+  transition: transform 0.25s ease;
+}
+
+.collapsing {
+  transition: height 0.25s ease;
+}
+
+// Force wrapping and line height for long breadcrumb links in search results
+.al-document-listings {
+  dl.document-metadata {
+    .breadcrumb-links {
+      ol.breadcrumb {
+        li.breadcrumb-item {
+          height: auto !important;
+          vertical-align: top !important;
+
+          a {
+            display: inline !important;
+            white-space: normal !important;
+            word-break: break-word !important;
+            overflow-wrap: break-word !important;
+            line-height: 1.4 !important;
+            margin-bottom: 0 !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Style the title of the currently selected hierarchy item to look like a link
+.al-hierarchy-highlight {
+  .documentHeader {
+    .al-collection-context-item-title {
+      color: var(--link-color, $link-color);
+      text-decoration: underline;
+    }
+  }
+}
+
+// OVERRIDE Arclight v1.4.0 to add physical container information to the collection context in the sidebar
+#collection-context .al-document-container {
+  display: block;
+}
+
+// OVERRIDE Arclight v1.4.0 to add physical container information to the collection context in the sidebar
+.document.al-collection-context {
+  .documentHeader {
+    .document-title-heading {
+      width: 100%;
+    }
+  }
+}

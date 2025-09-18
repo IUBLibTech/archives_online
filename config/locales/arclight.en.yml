@@ -1,4 +1,21 @@
 en:
+  arclight:
+    masthead_heading: Archives Online
+    masthead_heading_html: Archives Online
+    views:
+      about:
+        title: About - Archives Online at Indiana University
+      home:
+        title: Archives Online at Indiana University
+      contribute:
+        title: Contribute - Archives Online at Indiana University
+      help:
+        title: Help - Archives Online at Indiana University
+      repositories:
+        title: Repositories - Archives Online at Indiana University
+      show:
+        expand: "items above"
+        collapse: "items below"
   blacklight:
     search:
       fields:
@@ -59,3 +76,9 @@ en:
           place: Place
           subject: Subject
           access: Access
+  ngao:
+    arclight:
+      collection_context_component:
+        collection_id: Collection ID
+      collection_info_component:
+        total_items: Total Items

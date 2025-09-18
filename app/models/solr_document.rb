@@ -3,7 +3,7 @@
 # Represents a single document returned from Solr
 class SolrDocument
   include Blacklight::Solr::Document
- include Arclight::SolrDocument
+  include Arclight::SolrDocument
 
   # self.unique_key = 'id'
 
@@ -13,4 +13,20 @@ class SolrDocument
   # and Blacklight::Document::SemanticFields#to_semantic_values
   # Recommendation: Use field names from Dublin Core
   use_extension(Blacklight::Document::DublinCore)
+
+  def campus
+    collection? ? first('campus_unit_ssm') : collection.first('campus_unit_ssm')
+  end
+
+  def parent_campus
+    fetch('parent_campus_unit_ssm', [])
+  end
+
+  def containers
+    fetch('containers_ssim', [])
+  end
+
+  def normalized_title_html
+    self['normalized_title_html_ssm']&.first
+  end
 end

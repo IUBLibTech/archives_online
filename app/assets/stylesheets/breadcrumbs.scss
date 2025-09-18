@@ -1,0 +1,15 @@
+// Add breadcrumb heirarchy styles to arclight
+
+.al-show-breadcrumb {
+  .breadcrumb {
+    svg {
+      height: 1rem;
+      width: 1rem;
+      fill: #6E757C;
+    }
+
+    .breadcrumb-campus-link {
+      flex: 1 0 100%;
+    }
+  }
+}
