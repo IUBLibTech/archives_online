@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_09_18_192930) do
+ActiveRecord::Schema[7.0].define(version: 2025_09_19_212727) do
   create_table "bookmarks", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "user_type"
@@ -30,6 +30,21 @@ ActiveRecord::Schema[7.0].define(version: 2025_09_18_192930) do
     t.integer "repository_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "repositories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "repository_id"
+    t.string "name"
+    t.datetime "last_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "repositories_users", id: false, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "repository_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["repository_id"], name: "index_repositories_users_on_repository_id"
+    t.index ["user_id"], name: "index_repositories_users_on_user_id"
   end
 
   create_table "searches", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
