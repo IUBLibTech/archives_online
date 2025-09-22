@@ -17,7 +17,7 @@ require_relative '../../app/models/ead_processor'
 # as a backup
 # (default: http://127.0.0.1:8983/solr/blacklight-core)
 #
-namespace :arclight do
+namespace :archives_online do
   desc 'Index an EAD document, use FILE=<path/to/ead.xml> and REPOSITORY_ID=<myid>'
   # We need :environment to have access to the Blacklight confg
   task index: :environment do
@@ -28,8 +28,12 @@ namespace :arclight do
     solr_url = ENV.fetch('SOLR_URL', Blacklight.default_index.connection.base_uri)
     elapsed_time = Benchmark.realtime do
       `bundle exec traject -u #{solr_url} -i xml -c #{Rails.root}/lib/arclight/traject/ead2_config.rb #{file}`
+      print "Converting #{file} to EAD HTML \n"
       EadProcessor.convert_ead_to_html(file)
+      print "Converting #{file} to EAD XML \n"
       EadProcessor.save_ead_for_downloading(file)
+      print "Adding #{file} to DB \n"
+      EadProcessor.add_ead_to_db(file, 'aaamc')
     end
     print "Indexed #{file} (in #{elapsed_time.round(3)} secs).\n"
   end
@@ -40,9 +44,16 @@ namespace :arclight do
 
     dir = ENV['DIR']
     Dir.glob(File.join(dir, '*.xml')).each do |file|
-      system("rake arclight:index FILE=#{file}")
+      print "Indexing #{file} \n"
+      system("rake archives_online:index FILE=#{file}")
+=begin
+      print "Converting #{file} to EAD HTML \n"
       EadProcessor.convert_ead_to_html(file)
+      print "Converting #{file} to EAD XML \n"
       EadProcessor.save_ead_for_downloading(file)
+      print "Adding #{file} to DB \n"
+      EadProcessor.add_ead_to_db(file, 'aaamc')
+=end
     end
   end
 
