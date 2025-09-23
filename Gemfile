@@ -106,3 +106,6 @@ gem 'rubocop', '>= 1.0', group: %i[development test]
 gem 'sassc-rails', '~> 2.1'
 gem 'sentry-rails'
 gem 'sentry-ruby'
+gem 'delayed_job_active_record'
+gem 'delayed_job_web'
+gem 'daemons'
