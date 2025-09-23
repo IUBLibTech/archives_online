@@ -159,7 +159,7 @@ class EadProcessor
   # Only updates name & last update date w/ data from aspace
   def self.update_repository(id, name, last_updated_at)
     repo = Repository.find_by(repository_id: id)
-    repo.update_attributes(name: name, last_updated_at: last_updated_at)
+    repo.update(name: name, last_updated_at: last_updated_at)
   end
 
   # get list of eads contained in zip file
@@ -206,11 +206,11 @@ class EadProcessor
   end
 
   def self.add_last_indexed(filename, indexed_at)
-    Ead.find_by(filename: filename)&.update_attributes(last_indexed_at: indexed_at)
+    Ead.find_by(filename: filename)&.update(last_indexed_at: indexed_at)
   end
 
   def self.add_last_updated(filename, updated_at)
-    Ead.find_by(filename: filename)&.update_attributes(last_updated_at: updated_at)
+    Ead.find_by(filename: filename)&.update(last_updated_at: updated_at)
   end
 
   def self.get_updated_eads(args = {})
