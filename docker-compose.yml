@@ -14,6 +14,7 @@ services:
       - ./public:/app/webapp/public
       - ./generate-init.sh:/app/webapp/generate-init.sh
     depends_on:
+      - redis
       - db
       - solr
     ports:
@@ -21,6 +22,28 @@ services:
     expose:
       - 3000
     command: bundle exec puma -b tcp://0.0.0.0:3000
+
+  worker:
+    build:
+      context: .
+    image: ghcr.io/iublibtech/archives_online/archives_online:latest
+    env_file:
+      - .docker.env
+    volumes:
+      - .:/app/webapp
+      - ./tmp:/app/webapp/tmp
+    depends_on:
+      - redis
+      - db
+      - solr
+    command: sh -c 'bundle exec sidekiq'
+
+  redis:
+    image: bitnami/redis:6.2
+    env_file:
+      - .docker.env
+    volumes:
+      - redis:/bitnami/redis/data
 
   db:
     platform: linux/amd64
@@ -48,9 +71,9 @@ services:
 
 volumes:
   db:
+  redis:
   node_modules:
   public:
   solr_home:
   tmp:
-  zk:
-  zoo:
+
