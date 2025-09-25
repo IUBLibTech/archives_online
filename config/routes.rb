@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require "sidekiq/web" # require the web UI
 
 Rails.application.routes.draw do
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
 
   mount Blacklight::Engine => '/'
   mount Arclight::Engine => '/'
+  mount Sidekiq::Web => "/sidekiq"
 
   root to: 'arclight/repositories#index'
   concern :searchable, Blacklight::Routes::Searchable.new

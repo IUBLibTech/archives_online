@@ -31,5 +31,6 @@ module ArchivesOnline
         Rails.configuration.cache_classes ? require(c) : load(c)
       end
     end
+    config.active_job.queue_adapter = :sidekiq
   end
 end

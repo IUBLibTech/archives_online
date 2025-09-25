@@ -106,3 +106,4 @@ gem 'rubocop', '>= 1.0', group: %i[development test]
 gem 'sassc-rails', '~> 2.1'
 gem 'sentry-rails'
 gem 'sentry-ruby'
+gem "sidekiq", "~> 7.3"
