@@ -130,7 +130,6 @@ GEM
       rexml
     crass (1.0.6)
     csv (3.3.4)
-    daemons (1.4.1)
     database_cleaner (2.1.0)
       database_cleaner-active_record (>= 2, < 3)
     database_cleaner-active_record (2.2.0)
@@ -141,16 +140,6 @@ GEM
     debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
-    delayed_job (4.1.13)
-      activesupport (>= 3.0, < 9.0)
-    delayed_job_active_record (4.1.11)
-      activerecord (>= 3.0, < 9.0)
-      delayed_job (>= 3.0, < 5)
-    delayed_job_web (1.4.4)
-      activerecord (> 3.0.0)
-      delayed_job (> 2.0.3)
-      rack-protection (>= 1.5.5)
-      sinatra (>= 1.4.4)
     deprecation (1.1.0)
       activesupport
     devise (4.9.4)
@@ -257,8 +246,6 @@ GEM
     minitest (5.25.1)
     msgpack (1.7.2)
     multi_json (1.15.0)
-    mustermann (3.0.4)
-      ruby2_keywords (~> 0.0.1)
     mutex_m (0.3.0)
     mysql2 (0.5.6)
     net-http (0.4.1)
@@ -276,6 +263,15 @@ GEM
     nio4r (2.7.3)
     nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
+    omniauth (2.1.4)
+      hashie (>= 3.4.6)
+      logger
+      rack (>= 2.2.3)
+      rack-protection
+    omniauth-cas (3.0.2)
+      addressable (~> 2.8)
+      nokogiri (~> 1.12)
+      omniauth (~> 2.1)
     orm_adapter (0.5.0)
     ostruct (0.6.0)
     parallel (1.26.3)
@@ -408,7 +404,6 @@ GEM
       rubocop (~> 1.61)
       rubocop-rspec (~> 3, >= 3.0.1)
     ruby-progressbar (1.13.0)
-    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -444,11 +439,6 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.13.1)
     simplecov_json_formatter (0.1.4)
-    sinatra (3.2.0)
-      mustermann (~> 3.0)
-      rack (~> 2.2, >= 2.2.4)
-      rack-protection (= 3.2.0)
-      tilt (~> 2.0)
     slop (4.10.1)
     solr_wrapper (4.0.2)
       http
@@ -541,18 +531,16 @@ DEPENDENCIES
   bootstrap (~> 5.1)
   capybara
   coveralls
-  daemons
   database_cleaner
   database_cleaner-active_record
   debug
-  delayed_job_active_record
-  delayed_job_web
   devise
   devise-guests (~> 0.8)
   factory_bot
   importmap-rails
   jbuilder
   mysql2
+  omniauth-cas
   puma (~> 5.0)
   rails (~> 7.0.8, >= 7.0.8.1)
   rails-controller-testing

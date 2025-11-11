@@ -9,4 +9,16 @@ class ApplicationController < ActionController::Base
   def render404
     raise ActionController::RoutingError, 'Not Found'
   end
+
+  def after_sign_in_path_for(resource)
+    stored_location_for(resource) || admin_path
+  end
+
+  def after_accept_path_for(resource)
+    stored_location_for(resource) || admin_path
+  end
+
+  def after_invite_path_for(resource)
+    stored_location_for(resource) || admin_path
+  end
 end

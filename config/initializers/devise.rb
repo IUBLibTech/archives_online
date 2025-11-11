@@ -310,4 +310,11 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+
+  config.omniauth :cas,
+                  host: ENV['CAS_HOST'] || 'idp-stg.login.iu.edu',
+                  login_url: ENV['CAS_LOGIN_URL'] || '/idp/profile/cas/login',
+                  service_validate_url: ENV['CAS_VALIDATE_URL'] || '/idp/profile/cas/serviceValidate',
+                  logout_url: ENV['CAS_LOGOUT_URL'] || '/idp/profile/cas/logout',
+                  ssl: true
 end

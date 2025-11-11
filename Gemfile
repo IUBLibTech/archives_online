@@ -101,6 +101,7 @@ gem 'blacklight_range_limit'
 gem 'bootstrap', '~> 5.1'
 gem 'devise'
 gem 'devise-guests', '~> 0.8'
+gem 'omniauth-cas'
 gem 'rsolr', '>= 1.0', '< 3'
 gem 'rubocop', '>= 1.0', group: %i[development test]
 gem 'sassc-rails', '~> 2.1'
