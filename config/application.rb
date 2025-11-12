@@ -32,5 +32,6 @@ module ArchivesOnline
       end
     end
     config.active_job.queue_adapter = :sidekiq
+    Sidekiq.strict_args!(false)
   end
 end

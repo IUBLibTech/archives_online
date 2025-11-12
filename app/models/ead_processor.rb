@@ -72,7 +72,7 @@ class EadProcessor
         EadProcessor.save_ead_for_downloading(fpath)
         EadProcessor.convert_ead_to_html(fpath)
         #EadProcessor.delay.index_file(fpath, directory)
-        IndexJob.perform_async(fpath, directory)
+        IndexFileJob.perform_async(fpath, directory)
       end
     end
   end
@@ -97,7 +97,7 @@ class EadProcessor
     EadProcessor.save_ead_for_downloading(fpath)
     EadProcessor.convert_ead_to_html(fpath)
     #EadProcessor.delay.index_file(fpath, repository)
-    IndexJob.perform_async(fpath, directory)
+    IndexFileJob.perform_async(fpath, directory)
   end
   # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
