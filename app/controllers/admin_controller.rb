@@ -10,13 +10,15 @@ class AdminController < ApplicationController
   end
 
   def index_eads
-    EadProcessor.delay.import_eads
+    # EadProcessor.delay.import_eads
+    IndexRepoJob.perform_async
     redirect_to admin_path, notice: 'These files are being indexed in the background and will be ready soon.'
   end
 
   def index_repository
     repository = params[:repository]
-    EadProcessor.delay.import_eads({ files: [repository] })
+    # EadProcessor.delay.import_eads({ files: [repository] })
+    IndexRepoJob.perform_async({ files: [repository] })
     redirect_to admin_path, notice: 'These files are being indexed in the background and will be ready soon.'
   end
 
@@ -24,7 +26,8 @@ class AdminController < ApplicationController
     repository = params[:repository]
     file = params[:ead]
     args = { ead: file, repository: repository }
-    EadProcessor.delay.index_single_ead(args)
+    # EadProcessor.delay.index_single_ead(args)
+    IndexSingleEadJob.perform_async(args)
     redirect_to admin_path, notice: 'The file is being indexed in the background and will be ready soon.'
   end
 
