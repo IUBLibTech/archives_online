@@ -18,7 +18,7 @@ class Users::SessionsController < Devise::SessionsController
     options = Devise.omniauth_configs[:cas].options
     host = options[:host] || 'localhost'
     path = options[:logout_url] || '/logout'
-    redirect_to "https://#{host}#{path}"
+    redirect_to("https://#{host}#{path}", allow_other_host: true)
   end
 
   def log_in_as; end

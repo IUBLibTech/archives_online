@@ -37,5 +37,7 @@ module ArchivesOnline
     # Set the OpenURI buffer to zero so that remote files are forced to be a Tempfile
     # Otherwise, small files will be a IOString and cause read errors in rubyzip.
     OpenURI::Buffer::StringMax = 0
+
+    OmniAuth.config.allowed_request_methods = [:get]
   end
 end
