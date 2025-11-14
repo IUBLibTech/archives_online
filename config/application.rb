@@ -33,5 +33,9 @@ module ArchivesOnline
     end
     config.active_job.queue_adapter = :sidekiq
     Sidekiq.strict_args!(false)
+
+    # Set the OpenURI buffer to zero so that remote files are forced to be a Tempfile
+    # Otherwise, small files will be a IOString and cause read errors in rubyzip.
+    OpenURI::Buffer::StringMax = 0
   end
 end

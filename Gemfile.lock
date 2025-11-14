@@ -148,8 +148,12 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-bootstrap-views (1.1.0)
     devise-guests (0.8.3)
       devise
+    devise_invitable (2.0.11)
+      actionmailer (>= 5.0)
+      devise (>= 4.6)
     diff-lcs (1.6.1)
     docile (1.4.1)
     domain_name (0.6.20240107)
@@ -275,6 +279,9 @@ GEM
       addressable (~> 2.8)
       nokogiri (~> 1.12)
       omniauth (~> 2.1)
+    omniauth-rails_csrf_protection (1.0.2)
+      actionpack (>= 4.2)
+      omniauth (~> 2.0)
     orm_adapter (0.5.0)
     ostruct (0.6.0)
     parallel (1.26.3)
@@ -538,12 +545,16 @@ DEPENDENCIES
   database_cleaner-active_record
   debug
   devise
+  devise-bootstrap-views
   devise-guests (~> 0.8)
+  devise_invitable
   factory_bot_rails
   importmap-rails
   jbuilder
   mysql2
-  omniauth-cas
+  omniauth (~> 2.0)
+  omniauth-cas (~> 3.0)
+  omniauth-rails_csrf_protection
   puma (~> 5.0)
   rails (~> 7.0.8, >= 7.0.8.1)
   rails-controller-testing
