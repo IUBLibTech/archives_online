@@ -73,6 +73,9 @@ RSpec.configure do |config|
 
   # Include FactoryBot methods
   config.include FactoryBot::Syntax::Methods
+  config.include Devise::Test::ControllerHelpers, type: :helper
+  config.include Devise::Test::IntegrationHelpers, type: :request
+  config.include Warden::Test::Helpers
 
   # Configure DatabaseCleaner (using database_cleaner-active_record)
   config.before(:suite) do
@@ -94,7 +97,8 @@ RSpec.configure do |config|
   end
 
   # Configure WebMock - allow connections to localhost for Capybara
-  WebMock.disable_net_connect!(allow_localhost: true)
+  # WebMock.disable_net_connect!(allow_localhost: true)
+  WebMock.allow_net_connect!
 end
 
 # Configure Shoulda Matchers

@@ -1,4 +1,4 @@
-class IndexJob
+class IndexFileJob
   include Sidekiq::Job
 
   def perform(filename, repository)

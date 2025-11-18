@@ -74,4 +74,16 @@ Rails.application.configure do
   config.web_console.allowed_ips = ['172.18.0.0/16', '172.27.0.0/16', '0.0.0.0/0']
 
   config.assets.debug = true
+
+  unless ENV['AL_AUTHN'] == 'database'
+    config.force_ssl = true
+  else
+    # HSTS is sticky, so to turn it off, set the timeout to 0
+    # to expire it from the browser on the next request
+    # If hsts has ever been set, the first request will fail
+    # since it hasn't seen the new HSTS setting yet
+    config.force_ssl = false
+    config.ssl_options = {hsts: {timeout: 0}}
+  end
+
 end

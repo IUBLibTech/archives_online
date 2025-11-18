@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.3.9'
+#ruby '3.3.9'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.8', '>= 7.0.8.1'
@@ -66,7 +66,7 @@ group :development, :test do
   gem 'simplecov', require: false
 
   gem 'database_cleaner'
-  gem 'factory_bot'
+  gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'webmock'
 
@@ -101,6 +101,11 @@ gem 'blacklight_range_limit'
 gem 'bootstrap', '~> 5.1'
 gem 'devise'
 gem 'devise-guests', '~> 0.8'
+gem 'devise_invitable'
+gem 'devise-bootstrap-views'
+gem 'omniauth', '~> 2.0'
+gem 'omniauth-cas', '~> 3.0'
+gem "omniauth-rails_csrf_protection"
 gem 'rsolr', '>= 1.0', '< 3'
 gem 'rubocop', '>= 1.0', group: %i[development test]
 gem 'sassc-rails', '~> 2.1'

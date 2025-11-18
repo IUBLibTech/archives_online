@@ -72,7 +72,7 @@ class EadProcessor
         EadProcessor.save_ead_for_downloading(fpath)
         EadProcessor.convert_ead_to_html(fpath)
         #EadProcessor.delay.index_file(fpath, directory)
-        IndexJob.perform_async(fpath, directory)
+        IndexFileJob.perform_async(fpath, directory)
       end
     end
   end
@@ -97,7 +97,7 @@ class EadProcessor
     EadProcessor.save_ead_for_downloading(fpath)
     EadProcessor.convert_ead_to_html(fpath)
     #EadProcessor.delay.index_file(fpath, repository)
-    IndexJob.perform_async(fpath, directory)
+    IndexFileJob.perform_async(fpath, directory)
   end
   # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
@@ -105,7 +105,7 @@ class EadProcessor
   def self.delete_single_ead(args = {})
     filename = args[:ead]
     ENV['FILE'] = filename
-    system('bundle exec rake ngao:delete_ead', exception: true)
+    system('bundle exec rake archives_online:delete_ead', exception: true)
     # FIXME: In production deployment, the row isn't being destroyed by the rake task
     #  so try a direct invocation of the remove_ead_from_db method
     remove_ead_from_db(filename)
