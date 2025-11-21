@@ -1,18 +1,18 @@
-<div class="container">
+<div class="container" data-turbo="false">
   <div class="row">
-    <div class="col-md-12">
-      <ul class="nav nav-tabs nav-fill" id="adminTab" role="tablist">
-        <li class="nav-item flex-fill">
-          <a class="nav-link active" id="manage-repositories-tab" data-toggle="tab" href="#manage-repositories" role="tab" aria-controls="manage-repositories" aria-selected="true">Manage Repositories</a>
+    <div class="col-md-12" id="manage">
+      <ul role="tablist">
+        <li>
+          <a id="manage-repositories-tab" data-toggle="tab" href="#manage-repositories" role="tab" aria-controls="manage-repositories" aria-selected="true">Manage Repositories</a>
         </li>
         <% if current_user.admin? %>
-        <li class="nav-item flex-fill">
-          <a class="nav-link" id="manage-users-tab" data-toggle="tab" href="#manage-users" role="tab" aria-controls="manage-users" aria-selected="false">Manage Users</a>
+        <li>
+          <a id="manage-users-tab" data-toggle="tab" href="#manage-users" role="tab" aria-controls="manage-users" aria-selected="false">Manage Users</a>
         </li>
         <% end %>
       </ul>
       <div class="tab-content" id="adminTabContent">
-        <div class="tab-pane fade show active" id="manage-repositories" role="tabpanel" aria-labelledby="manage-repositories-tab">
+        <div id="manage-repositories" role="tabpanel" aria-labelledby="manage-repositories-tab">
           <h3>Manage Repositories</h3>
           <% if current_user.admin? %>
             <div class="row col">
@@ -95,7 +95,7 @@
           <% end %>
         </div>
         <% if current_user.admin? %>
-        <div class="tab-pane fade" id="manage-users" role="tabpanel" aria-labelledby="manage-users-tab">
+        <div id="manage-users" role="tabpanel" aria-labelledby="manage-users-tab">
           <h3>Manage Users</h3>
           <% if current_user.admin?%>
             <div class="row col">
