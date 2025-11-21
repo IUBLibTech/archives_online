@@ -7,4 +7,6 @@ import Blacklight from "blacklight"
 
 import "arclight"
 import "repositories"
+import "tabs"
 import "jquery"
+import "jquery-ui"
