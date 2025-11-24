@@ -28,6 +28,7 @@ class EadProcessor
   def self.process_files(args = {})
     page(args).css('a').each do |file_link|
       file_name = file_link.attributes['href'].value
+
       link = client(args) + file_name
       directory = File.basename(file_name, File.extname(file_name))
       ext = File.extname(file_name)
@@ -69,6 +70,10 @@ class EadProcessor
         zip_file.extract(f, fpath)
         add_ead_to_db(filename, directory)
         add_last_indexed(filename, DateTime.now)
+        # TODO If the entire DB has been purged or initialized the first time, the last_updated_at
+        # property will be nil, which makes date comparison math wrong.  This method should also
+        # be called, but maybe not *always* if it isn't already nil?.
+        # add_last_updated(ead_filename, ead_last_updated_at)
         EadProcessor.save_ead_for_downloading(fpath)
         EadProcessor.convert_ead_to_html(fpath)
         #EadProcessor.delay.index_file(fpath, directory)
@@ -82,13 +87,12 @@ class EadProcessor
   # need to unzip parent and index only the file selected
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   def self.index_single_ead(args = {})
-    repository = args[:repository]
-    file_name = args[:ead]
+    repository = args["repository"]
+    file_name = args["ead"]
     link = client(args) + "#{repository}/#{file_name}"
     directory = repository.parameterize.underscore
     path = "./data/#{directory}"
     FileUtils.mkdir_p(path)
-    puts link
     download = URI.open(link, 'rb') # rubocop:disable Security/Open
     fpath = File.join(path, file_name)
     IO.copy_stream(download, fpath)
@@ -256,7 +260,7 @@ class EadProcessor
   # if args are nil, process all zip files
   # otherwise, only process the specified file
   def self.should_process_file(args, name)
-    args[:files].nil? || args[:files].include?(name)
+    args["files"].nil? || args["files"].include?(name)
   end
 end
 # rubocop:enable Metrics/ClassLength
