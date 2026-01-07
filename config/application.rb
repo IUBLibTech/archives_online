@@ -39,5 +39,7 @@ module ArchivesOnline
     OpenURI::Buffer::StringMax = 0
 
     OmniAuth.config.allowed_request_methods = [:get]
+
+    config.hosts << ENV['SITE_HOST'] if ENV['SITE_HOST']
   end
 end
