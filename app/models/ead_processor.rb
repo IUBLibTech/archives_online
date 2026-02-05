@@ -132,7 +132,7 @@ class EadProcessor
   def self.index_file(filename, repository)
     ENV['REPOSITORY_ID'] = repository
     ENV['FILE'] = filename
-    system('bundle exec rake arclight:index', exception: true)
+    system('bundle exec rake archives_online:index', exception: true)
   end
 
   # get list of zip files and ead contents to show on admin import page
