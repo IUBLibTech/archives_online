@@ -36,14 +36,14 @@ services:
       - redis
       - db
       - solr
-    command: sh -c 'bundle exec sidekiq'
+    command: sh -c 'bundle exec sidekiq -c10'
 
   redis:
-    image: bitnami/redis:6.2
+    image: bitnamilegacy/redis:6.2
     env_file:
       - .docker.env
     volumes:
-      - redis:/bitnami/redis/data
+      - redis:/bitnamilegacy/redis/data
 
   db:
     platform: linux/amd64
