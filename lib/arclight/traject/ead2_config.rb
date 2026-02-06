@@ -59,6 +59,8 @@ DID_SEARCHABLE_NOTES_FIELDS = %w[
 ].freeze
 
 settings do
+  provide 'solr_writer.thread_pool', '0'
+  provide 'processing_thread_pool', '0'
   provide 'component_traject_config', File.join(__dir__, 'ead2_component_config.rb')
   provide 'id_normalizer', 'Arclight::NormalizedId'
   provide 'date_normalizer', 'Arclight::NormalizedDate'
