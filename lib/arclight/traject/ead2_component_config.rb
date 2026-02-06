@@ -26,6 +26,8 @@ settings do
   # provide 'parent' # the immediate parent component (or collection) indexing context
   # provide 'counter' # a global component counter to provide a global sort order for nested components
   # provide 'depth' # the current nesting depth of the component
+  provide 'solr_writer.thread_pool', '0'
+  provide 'processing_thread_pool', '0'
   provide 'component_traject_config', __FILE__
   provide 'date_normalizer', 'Arclight::NormalizedDate'
   provide 'title_normalizer', 'Arclight::NormalizedTitle'
