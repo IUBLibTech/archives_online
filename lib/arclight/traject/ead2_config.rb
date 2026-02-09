@@ -61,6 +61,7 @@ DID_SEARCHABLE_NOTES_FIELDS = %w[
 settings do
   provide 'solr_writer.thread_pool', '0'
   provide 'processing_thread_pool', '0'
+  provide 'solr_writer.http_timeout', (ENV['TRAJECT_SOLR_TIMEOUT'] || 300).to_i
   provide 'component_traject_config', File.join(__dir__, 'ead2_component_config.rb')
   provide 'id_normalizer', 'Arclight::NormalizedId'
   provide 'date_normalizer', 'Arclight::NormalizedDate'
