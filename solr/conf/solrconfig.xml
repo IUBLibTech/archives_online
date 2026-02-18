@@ -56,6 +56,12 @@
     <defaultQuery>*:*</defaultQuery>
   </admin>
 
+  <updateHandler class="solr.DirectUpdateHandler2">
+    <autoCommit>
+      <maxDocs>${solr.autoCommit.maxDocs:200}</maxDocs>
+    </autoCommit>
+  </updateHandler>
+
   <!-- SearchHandler
 
        http://wiki.apache.org/solr/SearchHandler
