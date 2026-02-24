@@ -116,6 +116,7 @@ to_field 'id' do |_record, accumulator, context|
   accumulator << (settings[:component_identifier_format] % data)
 end
 
+to_field 'ead_ssi', extract_xpath('/ead/eadheader/eadid')
 to_field 'title_filing_ssi', extract_xpath('./did/unittitle'), first_only
 to_field 'title_ssm', extract_xpath('./did/unittitle')
 to_field 'title_tesim', extract_xpath('./did/unittitle')
