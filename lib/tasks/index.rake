@@ -28,12 +28,6 @@ namespace :archives_online do
     solr_url = ENV.fetch('SOLR_URL', Blacklight.default_index.connection.base_uri)
     elapsed_time = Benchmark.realtime do
       `bundle exec traject -u #{solr_url} -i xml -c #{Rails.root}/lib/arclight/traject/ead2_config.rb #{file}`
-      print "Converting #{file} to EAD HTML \n"
-      EadProcessor.convert_ead_to_html(file)
-      print "Converting #{file} to EAD XML \n"
-      EadProcessor.save_ead_for_downloading(file)
-      print "Adding #{file} to DB \n"
-      EadProcessor.add_ead_to_db(file, 'aaamc')
     end
     print "Indexed #{file} (in #{elapsed_time.round(3)} secs).\n"
   end
