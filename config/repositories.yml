@@ -116,7 +116,7 @@ archives:
     <div class="al-repository-street-address-address1">Herman B Wells Library E460</div>
     <div class="al-repository-street-address-address2">1320 East Tenth Street</div>
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405-7000, United States</div>
-    <a href="https://libraries.indiana.edu/university-archives">Visit University Archives</a>
+    <a href="https://libraries.indiana.edu/university-archives">Visit the Ruth Lilly Special Collections and Archives</a>
   thumbnail_url: 'https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/archives.jpg'
 
 africanstudies:
@@ -157,9 +157,10 @@ aaamc:
     <div class="al-repository-contact-phone">812-855-8547</div>
     <div class="al-repository-contact-info"><a href="mailto:aaamc@indiana.edu">aaamc@indiana.edu</a></div>
   location_html: |
-    <div class="al-repository-street-address-address1">Smith Research Center, Rooms 180-181</div>
-    <div class="al-repository-street-address-address2">2805 East 10th Street</div>
-    <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47408-2601, United States</div>
+    <div class="al-repository-street-address-building">Herman B Wells Library</div>
+    <div class="al-repository-street-address-address1">1320 E 10th St</div>
+    <div class="al-repository-street-address-address2">West Tower, Suite 305</div>
+    <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405, United States</div>
     <a href="https://aaamc.indiana.edu/">Visit Archives of African American Music and Culture</a>
   thumbnail_url: 'https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/aaamc.jpg'
 
@@ -271,12 +272,12 @@ iueast:
 
 music:
   campus: 'US-InU'
-  name: 'Indiana University Jacobs School of Music'
+  name: 'Cook Music Library'
   visit_note: 'The Jacobs School of Music Archive is currently open for research.'
   description: 'The William and Gayle Cook Music Library, recognized as one of the largest academic music libraries in the world, serves the world-renowned Jacobs School of Music and the Bloomington Campus of Indiana University. The collection comprises over 700,000 catalogued items on 56,733 linear-feet of shelves. It occupies a four-floor, 55,000 square-foot facility in the Bess Meshulam Simon Music Library and Recital Center, dedicated in November 1995.'
   contact_html: |
-    <div class="al-repository-contact-phone">812-855-2970</div>
-    <div class="al-repository-contact-info"><a href="mailto:libmus@indiana.edu">libmus@indiana.edu</a></div>
+    <div class="al-repository-contact-phone">812-855-8541</div>
+    <div class="al-repository-contact-info"><a href="mailto:mlref@iu.edu">mlref@iu.edu</a></div>
   location_html: |
     <div class="al-repository-street-address-address1">William & Gayle Cook Music Library</div>
     <div class="al-repository-street-address-address2">200 South Jordan Avenue</div>
@@ -348,8 +349,8 @@ lamc:
 lcp:
   campus: 'US-InU'
   name: 'Liberian Collections'
-  visit_note: 'Attention Visiting Researchers: The African Studies Collection is currently closed for research.'
-  description: 'Attention Visiting Researchers: The Liberian Collections are currently closed for research. The Liberian Collections maintains the world’s largest non-governmental collection of Liberian materials. Holdings spanning back to the 1820s include personal papers of Liberian political leaders, intellectuals and scholars, ethnographic research records, government publications, newspapers and photographs.'
+  visit_note: 'Processed Liberian Collections are open to researchers with advance notice. However, the African Studies Librarian position is currently vacant and because of this, reference and research support is limited.'
+  description: 'Processed Liberian Collections are open to researchers with advance notice. However, the African Studies Librarian position is currently vacant and because of this, reference and research support is limited. The Liberian Collections maintains the world’s largest non-governmental collection of Liberian materials. Holdings spanning back to the 1820s include personal papers of Liberian political leaders, intellectuals and scholars, ethnographic research records, government publications, newspapers and photographs.'
   contact_html: |
     <div class="al-repository-contact-info"><a href="mailto:afstlib@indiana.edu">afstlib@indiana.edu</a></div>
   location_html: |
@@ -412,8 +413,9 @@ kinsey:
     <div class="al-repository-contact-phone">812-855-7686</div>
     <div class="al-repository-contact-info"><a href="mailto:libknsy@indiana.edu">libknsy@indiana.edu</a></div>
   location_html: |
-    <div class="al-repository-street-address-address1">The Library and Special Collections</div>
-    <div class="al-repository-street-address-address2">1165 East Third Street</div>
+    <div class="al-repository-street-address-building">Kinsey Institute Library & Special Collections</div>
+    <div class="al-repository-street-address-address1">Lindley Hall 310</div>
+    <div class="al-repository-street-address-address2">150 S. Woodlawn Ave.</div>
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405, United States</div>
     <a href="https://kinseyinstitute.org/collections/library">Visit The Kinsey Institute for Research in Sex, Gender and Reproduction</a>
   thumbnail_url: 'https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/kinsey.jpg'
