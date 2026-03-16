@@ -52,7 +52,7 @@ class EadProcessor
       ext = File.extname(file_name)
       next unless ext == '.xml'
 
-      args = { ead: file, repository: repository }
+      args = { 'ead'=> file, 'repository'=> repository }
       EadProcessor.index_single_ead(args)
     end
   end
@@ -87,8 +87,8 @@ class EadProcessor
   # need to unzip parent and index only the file selected
   # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   def self.index_single_ead(args = {})
-    repository = args[:repository]
-    file_name = args[:ead]
+    repository = args['repository']
+    file_name = args['ead']
     link = client(args) + "#{repository}/#{file_name}"
     directory = repository.parameterize.underscore
     path = "./data/#{directory}"

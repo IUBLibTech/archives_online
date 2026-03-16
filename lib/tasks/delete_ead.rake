@@ -11,15 +11,11 @@ namespace :archives_online do
 
     puts "archives_online-Arclight deleting #{ENV['FILE']}...\n"
 
-    if Rails.env == 'development'
-      solr_url = 'http://localhost:8983/solr/blacklight-core'
-    else
-      solr_url = begin
-                  Blacklight.default_index.connection.base_uri.to_s
-                rescue StandardError
-                  ENV['SOLR_URL'] || 'http://localhost:8983/solr/blacklight-core'
-                end
-    end
+    solr_url = begin
+             Blacklight.default_index.connection.base_uri.to_s
+             rescue StandardError
+               ENV['SOLR_URL'] || 'http://localhost:8983/solr/blacklight-core'
+             end
     # one slash per segment only please
     solr_url = solr_url.chomp('/')
 
