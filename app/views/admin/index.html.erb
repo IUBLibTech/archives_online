@@ -41,7 +41,7 @@
                           <% @delta_eads.each do |d| %>
                             <tr>
                               <td><%= d %></td>                       
-                              <td class="text-right"><%= link_to "Delete", delete_ead_url(ead: d), class: 'btn btn-sm btn-primary', method: :delete, data: { turbo: true, turbo_confirm: "Are you sure?" } %></td>
+                              <td class="text-right"><%= link_to "Delete", delete_ead_url(ead: d), class: 'btn btn-sm btn-primary', data: { turbo: true, turbo_method: :delete, turbo_confirm: "Are you sure?" } %></td>
                             </tr>
                           <% end %>
                         </tbody>
