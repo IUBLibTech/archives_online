@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 #ruby '3.3.9'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.0.8', '>= 7.0.8.1'
+gem 'rails', '~> 7.1', '< 7.2'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -112,3 +112,5 @@ gem 'sassc-rails', '~> 2.1'
 gem 'sentry-rails'
 gem 'sentry-ruby'
 gem "sidekiq", "~> 7.3"
+
+gem "bot_challenge_page", "~> 1.1"
