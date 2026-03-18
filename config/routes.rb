@@ -2,6 +2,7 @@
 require "sidekiq/web" # require the web UI
 
 Rails.application.routes.draw do
+  post "/challenge", to: "bot_challenge_page/bot_challenge_page#verify_challenge", as: :bot_detect_challenge
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
   ##### REMOVE SEARCH HISTORY #####
   # Note: has to be before we mount Blacklight::Engine

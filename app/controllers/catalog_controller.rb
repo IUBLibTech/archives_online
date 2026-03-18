@@ -8,6 +8,8 @@ class CatalogController < ApplicationController
   include Arclight::FieldConfigHelpers
   include Ngao::ComponentMetadataHelper
 
+  bot_challenge only: [:index, :show]
+
   # OVERRIDE v1.4.0 Arclight::Catalog#hierarchy to force large row count for expand_all
   def hierarchy
     @expand_all = params[:expand_all] == 'true'
