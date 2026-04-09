@@ -5,22 +5,23 @@
   <div class="rvt-container-xl">
     <div class="rvt-row rvt-justify-center">
       <!-- Categorized list of resource links -->
-      <div class="rvt-cols-3-md rvt-flex">
+      <div class="rvt-cols-3-md rvt-flex rvt-justify-center">
         <h3 class="rvt-footer-resources__heading">
           <%= link_to 'About', about_path, class: 'nav-link' %>
         </h3>
       </div>
       <!-- Categorized list of resource links -->
-      <div class="rvt-cols-3-md rvt-flex">
+      <div class="rvt-cols-3-md rvt-flex rvt-justify-center">
         <h3 class="rvt-footer-resources__heading">
-          <%= link_to 'Contribute to AO', contribute_path, class: 'nav-link' %>
+          <%= link_to 'Contribute to AO', contribute_path, class: 'nav-link', title: 'Contribute to Archives Online' %>
         </h3>
       </div>
       <!-- Categorized list of resource links -->
-      <div class="rvt-cols-3-md rvt-flex">
+
+      <div class="rvt-cols-3-md rvt-flex rvt-justify-center">
         <h3 class="rvt-footer-resources__heading">
           <% if current_user %>
-            <li class="nav-item ml-3"><a class="nav-link" href="https://libraries.indiana.edu/harmful-language-statement">Harmful Language Statement</a></li>
+
             <li class="nav-item ml-3">
               <%= link_to "Admin", admin_path, class: 'nav-link' %>
             </li>
@@ -31,18 +32,36 @@
                 <%= link_to "Logout", destroy_global_session_path, class: 'nav-link' %>
               <% end %>
             </li>
-            <%# <li class="nav-item ml-3"><a class="nav-link" href="http://www.dlib.indiana.edu/collections/findingaids">Legacy Archives Online</a></li> %>
           <% else %>
-            <li class="nav-item ml-3"><a class="nav-link" href="https://libraries.indiana.edu/harmful-language-statement">Harmful Language Statement</a></li>
             <li class="nav-item ml-3">
               <%= link_to "Admin", admin_path, class: 'nav-link' %>
             </li>
-            <%# <li class="nav-item ml-3"><a class="nav-link" href="http://www.dlib.indiana.edu/collections/findingaids">Legacy Archives Online</a></li> %>
           <% end %>
         </h3>
       </div>
     </div>
-  </div>
+    <div class="rvt-row rvt-justify-center">
+      <div class="rvt-cols-3-md rvt-flex rvt-justify-center">
+        <p></p>
+      </div>
+    </div>
+    <div class="rvt-row rvt-justify-center">
+      <p></p>
+      <ul class="rvt-footer-base__list">
+        <li class="rvt-footer-base__item">
+          <a class="rvt-footer-base__link" href="https://libraries.indiana.edu/digital-materials-accessibility">Accessibility Support</a>
+          |
+          <a class="rvt-footer-base__link" href="https://libraries.indiana.edu/designated-archival-repository">Designated Archival Repository Statement</a>
+          |
+          <a class="rvt-footer-base__link" href="https://libraries.indiana.edu/harmful-language-statement">Harmful Language Statement</a>
+        </li>
+      </ul>
+    </div>
+    <div class="rvt-row rvt-justify-center">
+      <div class="rvt-cols-3-md rvt-flex rvt-justify-center">
+        <p></p>
+      </div>
+    </div>
 </div>
 <!-- Base footer -->
 <footer class="rvt-footer-base">
@@ -69,3 +88,4 @@
     </div>
   </div>
 </footer>
+</div>
