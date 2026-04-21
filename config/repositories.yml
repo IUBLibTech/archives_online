@@ -482,7 +482,7 @@ politicalpapers:
     <a href="https://libraries.indiana.edu/modern-political-papers">Visit Modern Political Papers Collection</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/politicalpapers.jpg
 paleontology:
-  name: Test Name Change
+  name: Paleontology Collection
   campus: US-InU
   visit_note: ''
   description: The IU Paleontology Collection was formally established as a public
@@ -499,7 +499,7 @@ paleontology:
     <div class="al-repository-street-address-address1">1001 East 10th Street</div>
     <div class="al-repository-street-address-address2"></div>
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405-1405, United States</div>
-    <a href="https://palcoll.sitehost.iu.edu">Visit Test Name Change</a>
+    <a href="https://palcoll.sitehost.iu.edu">Visit Paleontology Collection</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/paleontology.png
 ruthlillymedical:
   name: Ruth Lilly Medical Library
