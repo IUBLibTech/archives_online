@@ -1,3 +1,9 @@
+# TODO: The conversion doesn't pull over the external request block containing the Aeon setup
+# request_types:
+#     aeon_web_ead:
+#       request_url: 'https://iub.aeon.atlas-sys.com/Logon/'
+#       request_mappings: 'Action=10&Form=31&Value=ead_url'
+
 require 'yaml'
 
 class YamlTransformer

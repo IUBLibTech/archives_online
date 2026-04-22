@@ -14,7 +14,7 @@ iupuigeneral:
     <div class="al-repository-street-address-address2"></div>
     <div class="al-repository-street-address-city_state_zip_country">Indianapolis, Indiana 46202, United States</div>
     <a href="https://library.indianapolis.iu.edu/special">Visit the Ruth Lilly Special Collections and Archives</a>
-  thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/IUPUI_General.jpg
+  thumbnail_url: https://assets.iu.edu/brand/legacy/trident-large.png
 iupuiga:
   name: Indiana University Indianapolis German-American Archives
   campus: US-iniu
@@ -33,7 +33,7 @@ iupuiga:
     <div class="al-repository-street-address-address2"></div>
     <div class="al-repository-street-address-city_state_zip_country">Indianapolis, Indiana 46202, United States</div>
     <a href="https://library.indianapolis.iu.edu/special">Visit the Ruth Lilly Special Collections and Archives</a>
-  thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/IUPUI_German.jpg
+  thumbnail_url: https://assets.iu.edu/brand/legacy/trident-large.png
 iupuipsa:
   name: Indiana University Indianapolis Philanthropic Studies Archives
   campus: US-iniu
@@ -51,7 +51,7 @@ iupuipsa:
     <div class="al-repository-street-address-address2"></div>
     <div class="al-repository-street-address-city_state_zip_country">Indianapolis, Indiana 46202, United States</div>
     <a href="https://library.indianapolis.iu.edu/special">Visit the Ruth Lilly Special Collections and Archives</a>
-  thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/IUPUI_Philanthropic.jpg
+  thumbnail_url: https://assets.iu.edu/brand/legacy/trident-large.png
 iupuiua:
   name: Indiana University Indianapolis University Archives
   campus: US-iniu
@@ -76,7 +76,7 @@ iupuiua:
     <div class="al-repository-street-address-address2"></div>
     <div class="al-repository-street-address-city_state_zip_country">Indianapolis, Indiana 46202, United States</div>
     <a href="https://library.indianapolis.iu.edu/special">Visit the Ruth Lilly Special Collections and Archives</a>
-  thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/IUPUI_University_Archives.jpg
+  thumbnail_url: https://assets.iu.edu/brand/legacy/trident-large.png
 lilly:
   name: Lilly Library
   campus: US-InU
@@ -96,6 +96,10 @@ lilly:
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405-5500, USA</div>
     <a href="https://libraries.indiana.edu/lilly-library">Visit Lilly Library</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/lilly.png
+  request_types:
+    aeon_web_ead:
+      request_url: 'https://iub.aeon.atlas-sys.com/Logon/'
+      request_mappings: 'Action=10&Form=31&Value=ead_url'
 wyliehouse:
   name: Wylie House Museum
   campus: US-InU
@@ -154,11 +158,12 @@ archives:
 africanstudies:
   name: African Studies Collection
   campus: US-InU
-  visit_note: The H.K. Banda Archive is currently open for research.
-  description: 'Attention visiting researchers: The H. K. Banda Archive is open for
-    research. However, researchers must inform the Librarian for African Studies one
-    week prior to their arrival of the archival materials they would like to see from
-    off-site storage.'
+  visit_note: ''
+  description: The IUB Libraries’ African Studies Collection is among the top academic
+    collections in the United States and is particularly strong in the humanities
+    and social sciences, covering Africa South of the Sahara at a research level and
+    North Africa at a general level. The collection includes pamphlets, posters, film,
+    newspapers, manuscripts, and personal papers.
   contact_html: |
     <div class="al-repository-contact-phone"></div>
     <div class="al-repository-contact-info"><a href="mailto:afstlib@iu.edu">afstlib@iu.edu</a></div>
@@ -201,7 +206,7 @@ aaamc:
     <div class="al-repository-street-address-address1">1320 E 10th St</div>
     <div class="al-repository-street-address-address2">West Tower, Suite 305</div>
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405, United States</div>
-    <a href="https://aaamc.indiana.edu/">Visit Archives of African American Music and Culture</a>
+    <a href="https://aaamc.indiana.edu">Visit Archives of African American Music and Culture</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/aaamc.jpg
 atm:
   name: Archives of Traditional Music
@@ -567,7 +572,7 @@ iunw:
     W. Anderson Library and serve as a unique community resource documenting and preserving
     the history of IU Northwest, the City of Gary, and the Calumet region.'
   contact_html: |
-    <div class="al-repository-contact-phone">219-980-6547</div>
+    <div class="al-repository-contact-phone">219 981-4281</div>
     <div class="al-repository-contact-info"><a href="mailto:iunasp@iu.edu">iunasp@iu.edu</a></div>
   location_html: |
     <div class="al-repository-street-address-building"></div>
@@ -576,6 +581,21 @@ iunw:
     <div class="al-repository-street-address-city_state_zip_country">Gary, Indiana 46408, United States</div>
     <a href="https://libguides.iun.edu/archives/Home">Visit Indiana University Northwest Archives and Special Collections</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/IUNW_Reading_Room_August_2023.jpg
+peirceedition:
+  name: Peirce Edition Project
+  campus: US-iniu
+  visit_note: ''
+  description: ''
+  contact_html: |
+    <div class="al-repository-contact-phone">317-274-2033</div>
+    <div class="al-repository-contact-info"><a href="mailto:cpeirce@iu.edu">cpeirce@iu.edu</a></div>
+  location_html: |
+    <div class="al-repository-street-address-building"></div>
+    <div class="al-repository-street-address-address1">902 West New York Street</div>
+    <div class="al-repository-street-address-address2">ES 0010</div>
+    <div class="al-repository-street-address-city_state_zip_country">Indianapolis, Indiana 46202, United States</div>
+    <a href="https://peirce.iupui.edu/resources.html#holdings">Visit the Ruth Lilly Special Collections and Archives</a>
+  thumbnail_url: https://uisapp2.iu.edu/confluence-prd/download/thumbnails/620660033/IATPeirceReposImage.png
 rbc:
   name: Ray Bradbury Center Archives
   campus: US-iniu
@@ -589,7 +609,7 @@ rbc:
     <div class="al-repository-contact-phone">317-274-1451</div>
     <div class="al-repository-contact-info"><a href="mailto:bradbury@iu.edu">bradbury@iu.edu</a></div>
   location_html: |
-    <div class="al-repository-street-address-building">IUPUI Cavanaugh Hall</div>
+    <div class="al-repository-street-address-building">IU Indianapolis Cavanaugh Hall</div>
     <div class="al-repository-street-address-address1">425 University Blvd</div>
     <div class="al-repository-street-address-address2">Room 121</div>
     <div class="al-repository-street-address-city_state_zip_country">Indianapolis, Indiana 46202, United States</div>
