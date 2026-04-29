@@ -13,7 +13,8 @@ require_relative '../creator_roles'
 require 'active_model/conversion' ## Needed for Arclight::Repository
 require 'active_support/core_ext/array/wrap'
 require 'arclight/digital_object'
-require 'arclight/year_range'
+#require 'arclight/year_range'
+require_relative '../../ngao/year_range'
 require 'arclight/missing_id_strategy'
 require 'arclight/traject/nokogiri_namespaceless_reader'
 
@@ -288,7 +289,7 @@ to_field 'digital_objects_ssm', extract_xpath('./dao|./did/dao', to_text: false)
 end
 
 to_field 'date_range_isim', extract_xpath('./did/unitdate/@normal', to_text: false) do |_record, accumulator|
-  range = Arclight::YearRange.new
+  range = Ngao::YearRange.new
   next range.years if accumulator.blank?
 
   ranges = accumulator.map(&:to_s)
