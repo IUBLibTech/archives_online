@@ -40,7 +40,8 @@ class YamlTransformer
           'description' => repo['description'],
           'contact_html' => contact_tag,
           'location_html' => location_tag,
-          'thumbnail_url' => repo['thumbnail_url']
+          'thumbnail_url' => repo['thumbnail_url'],
+          'request_types' => repo['request_types']
       }
     end
     hash
