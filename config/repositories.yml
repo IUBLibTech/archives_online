@@ -1,4 +1,24 @@
 ---
+iuinsa:
+  name: Indiana University Indianapolis National Service Archives
+  campus: US-iniu
+  visit_note: ''
+  description: The National Service Archives preserves the history of the national
+    service movement in the United States by collecting records from organizations
+    and individuals involved in the creation and development of organizations like
+    the Corporation for National and Community Service and other affiliated programs
+    both in and outside the federal government.
+  contact_html: |
+    <div class="al-repository-contact-phone"></div>
+    <div class="al-repository-contact-info"><a href="mailto:speccoll@iu.edu">speccoll@iu.edu</a></div>
+  location_html: |
+    <div class="al-repository-street-address-building">University Library 0133</div>
+    <div class="al-repository-street-address-address1">755 West Michigan Street</div>
+    <div class="al-repository-street-address-address2"></div>
+    <div class="al-repository-street-address-city_state_zip_country">Indianapolis, Indiana 46202, United States</div>
+    <a href="https://archives.iu.edu/repositories/iuinsa">Visit the Ruth Lilly Special Collections and Archives</a>
+  thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/iui-nsa.tif
+  request_types:
 iupuigeneral:
   name: Indiana University Indianapolis General Collections
   campus: US-iniu
@@ -15,6 +35,7 @@ iupuigeneral:
     <div class="al-repository-street-address-city_state_zip_country">Indianapolis, Indiana 46202, United States</div>
     <a href="https://library.indianapolis.iu.edu/special">Visit the Ruth Lilly Special Collections and Archives</a>
   thumbnail_url: https://assets.iu.edu/brand/legacy/trident-large.png
+  request_types:
 iupuiga:
   name: Indiana University Indianapolis German-American Archives
   campus: US-iniu
@@ -34,6 +55,7 @@ iupuiga:
     <div class="al-repository-street-address-city_state_zip_country">Indianapolis, Indiana 46202, United States</div>
     <a href="https://library.indianapolis.iu.edu/special">Visit the Ruth Lilly Special Collections and Archives</a>
   thumbnail_url: https://assets.iu.edu/brand/legacy/trident-large.png
+  request_types:
 iupuipsa:
   name: Indiana University Indianapolis Philanthropic Studies Archives
   campus: US-iniu
@@ -52,6 +74,7 @@ iupuipsa:
     <div class="al-repository-street-address-city_state_zip_country">Indianapolis, Indiana 46202, United States</div>
     <a href="https://library.indianapolis.iu.edu/special">Visit the Ruth Lilly Special Collections and Archives</a>
   thumbnail_url: https://assets.iu.edu/brand/legacy/trident-large.png
+  request_types:
 iupuiua:
   name: Indiana University Indianapolis University Archives
   campus: US-iniu
@@ -77,6 +100,7 @@ iupuiua:
     <div class="al-repository-street-address-city_state_zip_country">Indianapolis, Indiana 46202, United States</div>
     <a href="https://library.indianapolis.iu.edu/special">Visit the Ruth Lilly Special Collections and Archives</a>
   thumbnail_url: https://assets.iu.edu/brand/legacy/trident-large.png
+  request_types:
 lilly:
   name: Lilly Library
   campus: US-InU
@@ -98,8 +122,8 @@ lilly:
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/lilly.png
   request_types:
     aeon_web_ead:
-      request_url: 'https://iub.aeon.atlas-sys.com/Logon/'
-      request_mappings: 'Action=10&Form=31&Value=ead_url'
+      request_url: https://iub.aeon.atlas-sys.com/Logon/
+      request_mappings: Action=10&Form=31&Value=ead_url
 wyliehouse:
   name: Wylie House Museum
   campus: US-InU
@@ -118,6 +142,7 @@ wyliehouse:
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47401, United States</div>
     <a href="https://libraries.indiana.edu/wylie-house-museum">Visit Wylie House Museum</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/wyliehouse.jpg
+  request_types:
 wmi:
   name: Working Men’s Institute
   campus: US-InU
@@ -137,6 +162,7 @@ wmi:
     <div class="al-repository-street-address-city_state_zip_country">New Harmony, Indiana 47631, United States</div>
     <a href="http://www.workingmensinstitute.org/">Visit Working Men’s Institute</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/wmi.jpg
+  request_types:
 archives:
   name: University Archives
   campus: US-InU
@@ -155,6 +181,7 @@ archives:
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405-7000, United States</div>
     <a href="https://libraries.indiana.edu/university-archives">Visit the University Archives</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/archives.jpg
+  request_types:
 africanstudies:
   name: African Studies Collection
   campus: US-InU
@@ -174,6 +201,7 @@ africanstudies:
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405, United States</div>
     <a href="https://libraries.indiana.edu/african-studies">Visit African Studies Collection</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/africanstudies.png
+  request_types:
 iuse:
   name: Archives and Special Collections, Indiana University Southeast
   campus: US-InU-Se
@@ -189,6 +217,7 @@ iuse:
     <div class="al-repository-street-address-city_state_zip_country">New Albany, Indiana 47150, United States</div>
     <a href="https://www.ius.edu/library/find-information/special-collections.php">Visit Archives and Special Collections, Indiana University Southeast</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/iuse.jpg
+  request_types:
 aaamc:
   name: Archives of African American Music and Culture
   campus: US-InU
@@ -208,6 +237,7 @@ aaamc:
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405, United States</div>
     <a href="https://aaamc.indiana.edu">Visit Archives of African American Music and Culture</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/aaamc.jpg
+  request_types:
 atm:
   name: Archives of Traditional Music
   campus: US-InU
@@ -226,6 +256,7 @@ atm:
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405, United States</div>
     <a href="https://libraries.indiana.edu/archives-traditional-music">Visit Archives of Traditional Music</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/atm.jpg
+  request_types:
 bfca:
   name: Black Film Center & Archive
   campus: US-InU
@@ -245,6 +276,7 @@ bfca:
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405-7000, United States</div>
     <a href="https://bfca.indiana.edu">Visit Black Film Center & Archive</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/bfca.jpg
+  request_types:
 cshm:
   name: Center for Documentary Research and Practice
   campus: US-InU
@@ -265,6 +297,7 @@ cshm:
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405, United States</div>
     <a href="https://cdrp.mediaschool.indiana.edu/">Visit Center for Documentary Research and Practice</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/cshm.jpg
+  request_types:
 ewv:
   name: Indiana University Museum of Archaeology and Anthropology
   campus: US-InU
@@ -284,6 +317,7 @@ ewv:
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47408, United States</div>
     <a href="https://gbl.indiana.edu/collections/library-archives.html">Visit Indiana University Museum of Archaeology and Anthropology</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/ewv.jpg
+  request_types:
 folklore:
   name: Folklore Collection
   campus: US-InU
@@ -303,6 +337,7 @@ folklore:
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405-7000, United States</div>
     <a href="http://www.libraries.iub.edu/folklore">Visit Folklore Collection</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/folklore.jpg
+  request_types:
 gimms:
   name: Government Information, Maps, & Microform Services
   campus: US-InU
@@ -321,6 +356,7 @@ gimms:
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405-7000, United States</div>
     <a href="http://libraries.iub.edu/gimms">Visit Government Information, Maps, & Microform Services</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/gimms.jpg
+  request_types:
 iueast:
   name: Indiana University East Archives
   campus: US-inrmiue
@@ -340,6 +376,7 @@ iueast:
     <div class="al-repository-street-address-city_state_zip_country">Richmond, Indiana 47374, United States</div>
     <a href="http://iue.libguides.com/iuearchives">Visit Indiana University East Archives</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/iueast.jpg
+  request_types:
 music:
   name: Cook Music Library
   campus: US-InU
@@ -360,6 +397,7 @@ music:
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405, United States</div>
     <a href="https://libraries.indiana.edu/music">Visit Cook Music Library</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/music.jpg
+  request_types:
 iukokomo:
   name: Indiana University Kokomo Campus Archives
   campus: US-InU-K
@@ -378,6 +416,7 @@ iukokomo:
     <div class="al-repository-street-address-city_state_zip_country">Kokomo, Indiana 46902, United States</div>
     <a href="https://www.iuk.edu/library/campus-archives.html">Visit Indiana University Kokomo Campus Archives</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/iukokomo.jpg
+  request_types:
 iusb:
   name: Indiana University South Bend Archives and Special Collections
   campus: US-InU-Sb
@@ -400,6 +439,7 @@ iusb:
     <div class="al-repository-street-address-city_state_zip_country">South Bend, Indiana 46634, United States</div>
     <a href="https://library.iusb.edu/search-find/archives/index.html">Visit Indiana University South Bend Archives and Special Collections</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/iusb.jpg
+  request_types:
 iulmia:
   name: IU Libraries Moving Image Archive
   campus: US-InU
@@ -420,6 +460,7 @@ iulmia:
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405-7000, United States</div>
     <a href="http://www.libraries.iub.edu/iulmia">Visit IU Libraries Moving Image Archive</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/iulmia.jpg
+  request_types:
 lamc:
   name: Latin American Music Center
   campus: US-InU
@@ -438,6 +479,7 @@ lamc:
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405, United States</div>
     <a href="https://music.indiana.edu/lamc/">Visit Latin American Music Center</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/lamc.jpg
+  request_types:
 lcp:
   name: Liberian Collections
   campus: US-InU
@@ -461,6 +503,7 @@ lcp:
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405, United States</div>
     <a href="https://libraries.indiana.edu/african-studies">Visit Liberian Collections</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/lcp.jpg
+  request_types:
 politicalpapers:
   name: Modern Political Papers Collection
   campus: US-InU
@@ -481,6 +524,7 @@ politicalpapers:
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405-7000, United States</div>
     <a href="https://libraries.indiana.edu/modern-political-papers">Visit Modern Political Papers Collection</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/politicalpapers.jpg
+  request_types:
 paleontology:
   name: Paleontology Collection
   campus: US-InU
@@ -501,6 +545,7 @@ paleontology:
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405-1405, United States</div>
     <a href="https://palcoll.sitehost.iu.edu">Visit Paleontology Collection</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/paleontology.png
+  request_types:
 ruthlillymedical:
   name: Ruth Lilly Medical Library
   campus: US-iniu
@@ -521,6 +566,7 @@ ruthlillymedical:
     <div class="al-repository-street-address-city_state_zip_country">Indianapolis, Indiana 46202, United States</div>
     <a href="https://library.mednet.iu.edu/history-of-medicine/">Visit Ruth Lilly Medical Library</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/ruthlillymedical.jpg
+  request_types:
 kinsey:
   name: Kinsey Institute for Research in Sex, Gender and Reproduction
   campus: US-InU
@@ -537,8 +583,9 @@ kinsey:
     <div class="al-repository-street-address-address1">Lindley Hall 310</div>
     <div class="al-repository-street-address-address2">150 S. Woodlawn Ave.</div>
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405, United States</div>
-    <a href="https://kinseyinstitute.org/collections/library">Visit The Kinsey Institute for Research in Sex, Gender and Reproduction</a>
+    <a href="https://kinseyinstitute.org/collections/library">Visit Kinsey Institute for Research in Sex, Gender and Reproduction</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/kinsey.jpg
+  request_types:
 mediaschool:
   name: The Media School Archive
   campus: US-InU
@@ -558,6 +605,7 @@ mediaschool:
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405, United States</div>
     <a href="https://mediaschool.indiana.edu/about/archive.html">Visit The Media School Archive</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/mediaschool.png
+  request_types:
 iunw:
   name: Indiana University Northwest Archives and Special Collections
   campus: US-InU-N
@@ -581,6 +629,7 @@ iunw:
     <div class="al-repository-street-address-city_state_zip_country">Gary, Indiana 46408, United States</div>
     <a href="https://libguides.iun.edu/archives/Home">Visit Indiana University Northwest Archives and Special Collections</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/IUNW_Reading_Room_August_2023.jpg
+  request_types:
 peirceedition:
   name: Peirce Edition Project
   campus: US-iniu
@@ -596,6 +645,7 @@ peirceedition:
     <div class="al-repository-street-address-city_state_zip_country">Indianapolis, Indiana 46202, United States</div>
     <a href="https://peirce.iupui.edu/resources.html#holdings">Visit the Ruth Lilly Special Collections and Archives</a>
   thumbnail_url: https://uisapp2.iu.edu/confluence-prd/download/thumbnails/620660033/IATPeirceReposImage.png
+  request_types:
 rbc:
   name: Ray Bradbury Center Archives
   campus: US-iniu
@@ -615,6 +665,7 @@ rbc:
     <div class="al-repository-street-address-city_state_zip_country">Indianapolis, Indiana 46202, United States</div>
     <a href="https://liberalarts.iupui.edu/centers/bradbury-center/ray-bradbury-studies/archive/">Visit the Ray Bradbury Center Archives</a>
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/rbc.jpg
+  request_types:
 sseasian:
   name: South and Southeast Asian Collections
   campus: US-InU
@@ -632,4 +683,5 @@ sseasian:
     <div class="al-repository-street-address-city_state_zip_country">Bloomington, Indiana 47405, United States</div>
 
   thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/south_and_southeast_asian_archive.jpeg
+  request_types:
 ...
