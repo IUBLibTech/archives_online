@@ -8,7 +8,8 @@ class CatalogController < ApplicationController
   include Arclight::FieldConfigHelpers
   include Ngao::ComponentMetadataHelper
 
-  bot_challenge only: [:index, :show]
+  challenge_actions = ENV['CF_BOT_ACTIONS']&.split(",")&.map(&:to_sym)
+  bot_challenge only: challenge_actions || [:index, :show]
 
   # OVERRIDE v1.4.0 Arclight::Catalog#hierarchy to force large row count for expand_all
   def hierarchy
