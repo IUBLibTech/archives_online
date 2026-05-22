@@ -11,12 +11,12 @@ namespace :archives_online do
     builder = Nokogiri::XML::Builder.new do |xml|
       xml.urlset('xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9') {
 
-        Dir.new(ead_dir).each do |file|
-          next unless file.include?('xml')
+        Ead.all.each.each do |file|
+          next unless file.filename.include?('xml')
           xml.url {
-            ead_path = File.basename(file, ".xml")
+            ead_path = File.basename(file.filename, ".xml")
             xml.loc "https://archives.iu.edu/catalog/#{ead_path}"
-            xml.lastmod Time.now.strftime("%Y-%m-%d")
+            xml.lastmod file.last_indexed_at.to_time.strftime("%Y-%m-%dT%H:%M")
           }
         end
       }
