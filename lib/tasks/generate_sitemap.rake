@@ -16,7 +16,9 @@ namespace :archives_online do
           xml.url {
             ead_path = File.basename(file.filename, ".xml")
             xml.loc "https://archives.iu.edu/catalog/#{ead_path}"
-            xml.lastmod file.last_indexed_at.to_time.strftime("%Y-%m-%dT%H:%M")
+
+            lastmod = file.last_indexed_at.nil? ? Time.now : file.last_indexed_at.to_time
+            xml.lastmod lastmod.strftime("%Y-%m-%dT%H:%M")
           }
         end
       }
