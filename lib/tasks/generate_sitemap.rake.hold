@@ -18,7 +18,7 @@ namespace :archives_online do
             xml.loc "https://archives.iu.edu/catalog/#{ead_path}"
 
             lastmod = file.last_indexed_at.nil? ? Time.now : file.last_indexed_at.to_time
-            xml.lastmod lastmod.strftime("%Y-%m-%d")
+            xml.lastmod lastmod.strftime("%Y-%m-%dT%H:%M")
           }
         end
       }
