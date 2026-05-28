@@ -10,6 +10,7 @@ module Ngao
     # @param blacklight_config [Blacklight::Configuration]
     # @return [Boolean]
     def component_has_extra_metadata?(document, blacklight_config)
+      return true if component_has_digital_objects(document)
       blacklight_config.component_fields.values.any? do |field_config|
         next false if field_is_container?(field_config)
 
@@ -21,6 +22,14 @@ module Ngao
     end
 
     private
+
+    def component_has_digital_objects(document)
+      doc_value = document.digital_objects&.first
+      value_present_and_non_empty?(doc_value)
+    rescue StandardError => e
+      log_field_access_error(document, field_name, e)
+      false
+    end
 
     def field_is_container?(field_config)
       field_config.try(:accessor) == :containers || field_config.try(:field) == :containers
