@@ -17,7 +17,7 @@ iuinsa:
     <div class="al-repository-street-address-address2"></div>
     <div class="al-repository-street-address-city_state_zip_country">Indianapolis, Indiana 46202, United States</div>
     <a href="https://archives.iu.edu/repositories/iuinsa">Visit the Ruth Lilly Special Collections and Archives</a>
-  thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/iui-nsa.tif
+  thumbnail_url: https://webapp1.dlib.indiana.edu/archivesOnline/repositoryImages/iui-nsa.jpg
   request_types:
 iupuigeneral:
   name: Indiana University Indianapolis General Collections
