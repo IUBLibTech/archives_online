@@ -25,6 +25,18 @@
       </script>
     <% end %>
 
+    <% unless ENV['SITE_HOST'] =~ /localhost|devel|stage|test|preview/ %>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-J2B2XVXX8M"></script>
+      <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-J2B2XVXX8M');
+      </script>
+    <% end  %>
+
     <%= csrf_meta_tags %>
     <%= content_for(:head) %>
   </head>
