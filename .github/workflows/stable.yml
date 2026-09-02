@@ -2,9 +2,7 @@ name: Build stable
 
 on:
   push:
-    branches:
-      - "stable"
-  workflow_dispatch:
+    branches: [ '**-stable' ]
 
 jobs:
   docker:
